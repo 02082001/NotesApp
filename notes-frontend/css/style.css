@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  background-color: #17141d;
+  color: white;
+  font-family: "DM Mono", monospace;
+  overflow-x: hidden;
+}
+
+header {
+  font-size: 2rem;
+}
+.done {
+  visibility: hidden;
+}
+.detailSection {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: end;
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+}
+.noteInput {
+  width: 20vw;
+  height: 7vh;
+}
+.noteHeading,
+.noteButton {
+  width: 20vw;
+}
+
+.noteButton:hover {
+  background-color: #ff6f47;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff6f47;
+  color: white;
+}
+
+.container {
+  border: 2px solid rgba(255, 0, 0, 0.888);
+  width: 50%;
+  background-color: rgba(206, 53, 53, 0.716);
+}
+.display_title {
+  font-size: 32px;
+}
+.cards {
+  min-height: 10rem;
+  background-color: rgba(111, 240, 240, 0.476);
+  border: 2px solid rgb(40, 224, 202);
+  border-radius: 4px;
+}
+
+.cardSection {
+  position: relative;
+  height: 350px;
+  width: 400px;
+
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  overflow-y: scroll;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s;
+  margin: 0;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+}
+.cardSection::-webkit-scrollbar {
+  display: none;
+}
+
+.cardSection:hover {
+  transform: translateY(-1rem);
+  transform: translateX(-3rem);
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  z-index: 100;
+}
+
+.cardSection:not(:first-child) {
+  margin-left: -130px;
+}
+
+@media screen and (max-width: 600px) {
+  .cardSection {
+    margin-left: 10px;
+  }
+  .cardSection:not(:first-child) {
+    margin-left: 10px;
+  }
+  .cardSection:hover {
+    background: inherit;
+  }
+  .noteInput {
+    width: 60vw;
+    height: 8vh;
+  }
+  .noteHeading,
+  .noteButton {
+    width: 60vw;
+  }
+
+  .noteButton:hover {
+    background-color: #ff6f47;
+  }
+}
+
+.check {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 24px;
+  width: 12px;
+  border-bottom: 7px solid #78b13f;
+  border-right: 7px solid #78b13f;
+}
+.done {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
